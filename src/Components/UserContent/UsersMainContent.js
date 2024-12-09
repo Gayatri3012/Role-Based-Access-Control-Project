@@ -19,7 +19,7 @@ export default function UsersMainContent() {
     const [filteredUsers, setFilteredUsers] = useState(users);
 
     function fetchUsers() {
-        fetch("/api/users")
+        fetch("https://standing-alive-airship.glitch.me/users")
         .then((res) => {
             if(!res.ok){
                 throw new Error('HTTP error!!')

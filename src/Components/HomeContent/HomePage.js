@@ -12,7 +12,7 @@ export default function HomePage() {
     const [isLoading, setIsLoading] = useState(false)
 
     function fetchUsers() {
-        fetch("/api/users")
+        fetch("https://standing-alive-airship.glitch.me/users")
         .then((res) => {
             if(!res.ok){
                 throw new Error('HTTP error!!')

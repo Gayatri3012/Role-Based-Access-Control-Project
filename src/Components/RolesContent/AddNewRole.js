@@ -35,9 +35,8 @@ export default function AddNewRoleForm({updateRole, handleCloseModal}) {
         formData.name = roleName.current?.value;
         formData.permissions = selected;
 
-        console.log(formData);
 
-        fetch(updateRole ? `/api/roles/${updateRole.id}` :'/api/roles', {
+        fetch(updateRole ? `https://standing-alive-airship.glitch.me/roles/${updateRole.id}` :'https://standing-alive-airship.glitch.me/roles', {
             method: updateRole? 'PUT' : 'POST',
             headers: {
                 "Content-Type": "application/json",

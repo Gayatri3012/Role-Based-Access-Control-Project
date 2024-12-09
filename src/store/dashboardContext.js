@@ -17,14 +17,14 @@ export default function DashboardContextProvider({children}){
     
     useEffect(() => {
         const updatePermissions = () => {
-            fetch("/api/permissions")
+            fetch("https://standing-alive-airship.glitch.me/permissions")
             .then((res) => res.json())
             .then((data) => {
                 setPermissions(data)
-            }).catch(err => console.log(err));;
+            }).catch(err => console.log(err));
         }
         const updateRoles = () => {
-            fetch("/api/roles")
+            fetch("https://standing-alive-airship.glitch.me/roles")
             .then((res) => res.json())
             .then((data) => {
                 setRoles(data)
@@ -35,7 +35,7 @@ export default function DashboardContextProvider({children}){
     },[])
 
     const fetchAndSetRoles = async () => {
-        const res = await fetch('/api/roles');
+        const res = await fetch('https://standing-alive-airship.glitch.me/roles');
         const updatedRoles = await res.json();
         setRoles(updatedRoles); 
     };

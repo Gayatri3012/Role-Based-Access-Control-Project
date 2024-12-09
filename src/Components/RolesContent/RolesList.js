@@ -46,12 +46,16 @@ export default function RolesList(){
 
     function handleDeleteRole(id) {
 
-        fetch(`/api/users?role=${id}`)
-        .then(res => res.json())
+        fetch(`https://standing-alive-airship.glitch.me/users?role=${id}`)
+        .then(res => {
+            if(!res.ok){
+                throw new Error('Network response was not ok');
+            }
+            return res.json()
+        })
         .then(users => {
-            console.log(users)
             users.forEach(user => {
-                fetch(`/api/users/${user.id}`, {
+                fetch(`https://standing-alive-airship.glitch.me/users/${user.id}`, {
                     method: 'PUT',
                     headers: {
                         "Content-Type": "application/json",
@@ -61,7 +65,7 @@ export default function RolesList(){
             });
         })
         .then(() => {
-            fetch(`/api/roles/${id}`, {
+            fetch(`https://standing-alive-airship.glitch.me/roles/${id}`, {
                 method: 'DELETE',
                 headers: {
                     "Content-Type": "application/json",

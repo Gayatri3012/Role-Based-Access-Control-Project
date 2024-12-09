@@ -23,7 +23,7 @@ export default function UsersList({users, fetchUsers}){
 
     function handleDeleteUser(id) {
         
-        fetch(`/api/users/${id}`, {
+        fetch(`https://standing-alive-airship.glitch.me/users/${id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",

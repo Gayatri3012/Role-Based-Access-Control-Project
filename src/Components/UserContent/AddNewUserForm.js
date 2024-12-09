@@ -53,7 +53,7 @@ export default function AddNewUserForm({updateUser, handleCloseModal, fetchUsers
     
 
         formData.status = isStatusChecked ? 'Active' : 'Inactive';
-        fetch(updateUser ? `/api/users/${updateUser.id}` : '/api/users', {
+        fetch(updateUser ? `https://standing-alive-airship.glitch.me/users/${updateUser.id}` : 'https://standing-alive-airship.glitch.me/users', {
             method: updateUser? 'PUT' : 'POST',
             headers: {
                 "Content-Type": "application/json",
