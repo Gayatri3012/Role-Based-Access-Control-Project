@@ -1,0 +1,104 @@
+.NavigationBar{
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 6%;
+    margin: 1rem;
+    padding: 1.5rem 1rem 1rem;
+    background-color: rgb(98, 99, 243);
+    border-radius: 16px;
+    color: #fff;
+}
+
+.appName{
+    padding-top: 0.6rem;
+    text-align: center;
+    font-size: large;
+    font-weight: 500;
+}
+
+.NavigationBar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.NavigationBar ul li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.NavigationBar ul li:hover{
+    background-color: #7070fc;
+    border-radius: 8px;
+}
+
+.NavigationBar ul img{
+    height: 1.9rem;
+    width: 1.9rem;
+}
+
+.NavigationBar ul p{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 110%;
+    /* transform: translateX(-50%); */
+    margin-top: 8px; 
+    background-color:rgb(79, 62, 156);
+    /* background-color:#d05987; */
+    color: white;
+    padding: 0.5rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.NavigationBar ul li:hover p {
+    display: block;
+  }
+
+  
+@media (max-width: 768px) {
+    .NavigationBar{
+      margin: 0;
+      padding: 0;
+      flex-direction: row;
+      width: 100%;
+      position: sticky;
+      border-radius: 0;
+      bottom: 0;
+    }
+
+    .NavigationBar ul{
+        padding: 0.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .NavigationBar ul img{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    
+    .appName{
+       display: none;
+    }
+
+}
+
+
+

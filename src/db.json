@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "name": "max",
+      "email": "test@test.com",
+      "role": "4eb9",
+      "status": "Active",
+      "id": "b56a"
+    },
+    {
+      "name": "tytyty",
+      "email": "test@test.com",
+      "role": "4eb9",
+      "status": "Inactive",
+      "id": "f8d3"
+    }
+  ],
+  "roles": [
+    {
+      "name": "User",
+      "permissions": [
+        "1"
+      ],
+      "id": "4eb9"
+    }
+  ],
+  "permissions": [
+    {
+      "id": "1",
+      "name": "read",
+      "description": "Grants the ability to view or access data."
+    },
+    {
+      "id": "2",
+      "name": "write",
+      "description": " Allows the creation or modification of data."
+    },
+    {
+      "id": "3",
+      "name": "delete",
+      "description": "Grants the ability to remove data."
+    }
+  ]
+}

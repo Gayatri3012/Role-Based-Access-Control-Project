@@ -1,0 +1,121 @@
+.PermissionContent{
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 50px); 
+    overflow-y: auto;
+}
+
+.PermissionHeader {
+    padding: 1.4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.PermissionHeader p{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+
+
+.PermissionsList{
+    max-height: calc(100%-100px);
+    margin-top: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0 1rem 1.5rem;  
+    overflow-y: auto;
+}
+
+.PermissionsList table{
+    width: 100%;
+    max-height: 80%;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    table-layout: auto;
+}
+
+.PermissionsList table thead{
+    position: sticky;
+    top:0;
+    background-color: white;
+}
+
+.PermissionsList table th{
+    padding: 1.5rem 0 1rem;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: large;
+    font-weight: 500;
+}
+
+.PermissionsList table td{
+    border-bottom: 2px solid #fbfbfb;
+    padding: 1rem 0;
+}
+
+.permissionName{
+    color: #4c4c4d;
+    text-transform: uppercase;
+}
+
+.listHeadings{
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #7a7989;
+}
+
+.listItem{
+    color: #7a7989;
+}
+
+@media (max-width: 768px) {
+    .PermissionContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20%;
+        height: 90%;
+        max-height: calc(100vh - 50px); 
+        overflow-y: auto;
+    }
+
+        
+    .PermissionHeader {
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .PermissionHeader p{
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+
+    .PermissionsList table{
+        width: 100%;
+        max-height: 80%;
+        padding: 0;
+        margin: 0;
+        overflow-x: auto;
+    }
+    
+    .PermissionsList table th{
+        padding: 1rem 0.4rem;
+        font-size: medium;
+        font-weight: 500;
+    }
+
+    .PermissionsList table td{
+        border-bottom: 2px solid #fbfbfb;
+        padding: 0.8rem 0.6rem;
+        font-size: small;
+    }
+    
+}
+
+

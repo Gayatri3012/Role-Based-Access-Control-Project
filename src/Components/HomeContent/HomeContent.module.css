@@ -1,0 +1,109 @@
+.HomeContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90%;
+    max-height: calc(100vh - 50px); 
+    overflow-y: auto;
+}
+
+.pageName{
+    margin: 0;
+    display: none;
+    font-size: x-large;
+}
+
+.cardsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.InfoCard{
+    padding: 1rem;
+    color: white;
+    border-radius: 18px;
+}
+
+.InfoCard:nth-child(1){
+  background-color:#2E93fA ;
+}
+
+.InfoCard:nth-child(2){
+    background-color:#65da269c ;
+}
+
+.InfoCard:nth-child(3){
+    background-color:#E91E63 ;
+}
+.cardLabel{
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.cardValue{
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    font-size: xx-large;
+}
+
+.chartContainer{
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chartContainer p{
+   font-size: large;
+}
+
+
+
+@media (max-width: 768px) {
+    .HomeContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 90%;
+        max-height: calc(100vh - 50px); 
+        overflow-y: auto;
+    }
+    .cardsContainer{
+        width: 95%;
+        gap: 0.5rem;
+    }
+
+    .InfoCard{
+        padding: 0.2rem;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 18px;
+    }
+
+    .cardLabel{
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 1rem 0.5rem;
+    }
+    
+    .cardValue{
+        text-align: center;
+        margin: 0;
+        padding: 1rem 0.5rem;
+        font-size: 1.4rem;
+    }
+    
+}
+
+@media (max-width: 575.98px) {
+    .pageName{
+     display: block;
+    }
+   }
