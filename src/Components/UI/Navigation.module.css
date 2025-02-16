@@ -75,7 +75,7 @@
       padding: 0;
       flex-direction: row;
       width: 100%;
-      position: sticky;
+      position: fixed;
       border-radius: 0;
       bottom: 0;
     }

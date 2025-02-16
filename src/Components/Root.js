@@ -4,9 +4,12 @@ import { useContext } from "react";
 import styles from './Root.module.css'
 import { DashboardContext } from "../store/dashboardContext";
 
+import { toast } from 'react-toastify';
+
+
 export default function RootLayout(){
     const {isAuth , roles, permissions} = useContext(DashboardContext);
-  
+
     return <section className={styles.rootLayout}>
         {!isAuth && <p>Please <a href="/login">login</a></p>}
         {isAuth && <>

@@ -231,12 +231,12 @@
     
     .UserSearchBar input, select {
         padding: 0.3rem 0.5rem;  
-        font-size: medium;
+        font-size: 14px;
     }
     
     
     .filterOptionName{
-        font-size: medium;
+        font-size: 14px;
         margin: 0;
         padding: 0.2rem;
     }
@@ -252,7 +252,7 @@
     
     .UsersList table th{
         padding: 0.8rem 0 ;
-        font-size: medium;
+        font-size: 14px;
         font-weight: 500;
     }
 
@@ -295,9 +295,15 @@
 
     .editIcon{
         display: block;
-        height: 1.7rem;
-        width: 1.7rem;
+        height: 1.5rem;
+        width: 1.5rem;
     }
+
+    .deleteButton img{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    
      
     .editIcon:hover{
         transform: scale(1.1);

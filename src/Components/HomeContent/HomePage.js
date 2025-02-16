@@ -3,6 +3,7 @@ import styles from './HomeContent.module.css'
 import { DashboardContext } from "../../store/dashboardContext";
 import RolesChart from "./RolesChart";
 import CardContainer from "./CardContainer";
+import { toast } from 'react-toastify';
 
 export default function HomePage() {
 
@@ -12,6 +13,8 @@ export default function HomePage() {
     const [isLoading, setIsLoading] = useState(false)
 
     function fetchUsers() {
+      const loadingToast = toast.loading("Loading data, please wait...");
+      setIsLoading(true)
         fetch("https://standing-alive-airship.glitch.me/users")
         .then((res) => {
             if(!res.ok){
@@ -20,7 +23,7 @@ export default function HomePage() {
             return res.json()
         })
         .then((data) => {
-          setIsLoading(true)
+        
             const usersWithRoles = data.map(user => {
                 if (roles ) {
                     const role = roles.find(role => role.id === user.role);
@@ -31,10 +34,16 @@ export default function HomePage() {
                 }
             });
             setUsers(usersWithRoles);  
+            toast.dismiss(loadingToast);
             setIsLoading(false)
-        }).catch(err => console.log(err));
+        }).catch(err => {
+          toast.dismiss(loadingToast);
+          toast.error('Failed to load users')
+          setIsLoading(false);
+          console.log(err)
+        });
     }
-    
+     
     useEffect(() => {
            fetchUsers();
   
