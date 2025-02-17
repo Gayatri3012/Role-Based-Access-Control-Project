@@ -47,7 +47,7 @@
 } 
 
 .UserSearchBar input, select {
-    border: 1px solid #f3f3f3;
+    border: 1px solid #e8e8e8;
     border-radius: 10px;
     padding: 0.5rem;  
     font-size: 1rem;

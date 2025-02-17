@@ -13,8 +13,9 @@ export default function HomePage() {
     const [isLoading, setIsLoading] = useState(false)
 
     function fetchUsers() {
-      const loadingToast = toast.loading("Loading data, please wait...");
       setIsLoading(true)
+      const loadingToast = toast.loading("Loading data, please wait...");
+    
         fetch("https://standing-alive-airship.glitch.me/users")
         .then((res) => {
             if(!res.ok){
@@ -54,19 +55,20 @@ export default function HomePage() {
       count: users.filter(user => user.role === role.name).length 
   }));
 
-    if(isLoading){
-      return <p>Loading...</p>
-    }
+    // if(isLoading){
+    //   return <p style={{textAlign:"center"}}>Loading...</p>
+    // }
     
 
-    return <section className={styles.HomeContent}> 
+    return (<section className={styles.HomeContent}> 
 
-      <p className={styles.pageName}>Admin Dashboard</p>
-
-      {users && <CardContainer users={users}/>}
-
-      {users.length !== 0 && roleCounts && <RolesChart roleCounts={roleCounts} />}
-        
+      {!isLoading && <>
+        <p className={styles.pageName}>Admin Dashboard</p>
+       { users && <CardContainer users={users}/>}
+        {users.length !== 0 && roleCounts && <RolesChart roleCounts={roleCounts}  />}
+        </> }
+     { isLoading && <p style={{textAlign:"center", fontWeight:500}}>Loading data, please wait... (Server might take some time to start)</p>}
     </section>
-
+  )
+  
 }
