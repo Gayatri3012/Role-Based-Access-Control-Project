@@ -10,10 +10,10 @@ export default function HomePage() {
     const {roles} = useContext(DashboardContext);
 
     const [users, setUsers] = useState([]);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     function fetchUsers() {
-      setIsLoading(true)
+      // setIsLoading(true)
       const loadingToast = toast.loading("Loading data, please wait...");
     
         fetch("https://standing-alive-airship.glitch.me/users")
@@ -61,13 +61,17 @@ export default function HomePage() {
     
 
     return (<section className={styles.HomeContent}> 
-
+      
+      { isLoading && <p style={{textAlign:"center", fontWeight:500}}>
+        Loading data, please wait... (Server might take some time to start)
+        </p>
+      }
       {!isLoading && <>
         <p className={styles.pageName}>Admin Dashboard</p>
        { users && <CardContainer users={users}/>}
         {users.length !== 0 && roleCounts && <RolesChart roleCounts={roleCounts}  />}
         </> }
-     { isLoading && <p style={{textAlign:"center", fontWeight:500}}>Loading data, please wait... (Server might take some time to start)</p>}
+     
     </section>
   )
   
